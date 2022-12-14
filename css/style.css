@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Silkscreen&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-login{
+    width: 100vw;/* VW-> Viewport porcentagem da tela 0 a 100 horizontal*/
+    height: 100vh;/* VH-> Viewport porcentagem da tela 0 a 100 vertical*/
+    background: #201b2c;
+    display: flex;/*Deixar lado a lado*/
+    justify-content: center;/*Centraliza ou move no eixo X */
+    align-items: center;/*Centraliza ou move no eixo Y */
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;/* Muda o direcionamento de lado a lado para colunas*/
+}
+
+/*Setando o h1 detro desta classe*/
+.left-login > h1{
+    color: #77ffc0;
+    width: 35vw;
+}
+
+.left-login-image{
+    width: 35vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;/* margem interna em cima e embaixo co 30 e nos lados 35*/
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 400px #00000056;
+    /*Criando sombra
+    1-Eixo X  se a sombra vai direita ou esquerda
+    2-Eixo Y se vai pra cima ou pra baixo
+    3- blur  e a quantidade do entorno
+    4-cor da sombra
+    */
+}
+
+.card-login{
+    color: #00ff88;
+    font-weight: 700;/* Peso da imagen deixando ela puxado pro negrito*/
+    margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+/* Acessando o input*/
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow:  0px 10px 40px #00000056;
+    outline: none;/*Desabilita a caixa de texto quando seleciona um campo*/
+    box-sizing: border-box;/*Deparar as divs para que uma nao ultrapasse a outra*/
+
+}
+
+.textfield > label{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.textfield >input::placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;/*Transformando letras para maiuscula*/
+    font-weight: 800;/*Peso da fonte*/
+    letter-spacing: 3px;/*Espaçamento entre cores*/
+    color: #2b134b;
+    cursor: pointer;/* Muda o cursor para pointer (mao)*/
+    box-shadow: 0px 10px 50px -12px #00ff8052;    
+    margin-top: 10px;
+}
+
+/*Definindo o comportamento em tamanhos de telas diferentes*/
+
+@media only screen and (max-width: 950px) {
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .main-login{
+        flex-direction: column;
+    }
+    .left-login > h1{
+        display: none;
+    }
+    .left-login{
+        width: 100%;
+        height: auto;
+    }
+    .right-login{
+        width: 100%;
+        height: auto;
+    }
+    .left-login-image{
+        width: 50vw;
+    }
+    .card-login{
+        width: 90%;
+    }
+}
